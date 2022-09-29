@@ -8,7 +8,7 @@ client = commands.Bot(command_prefix='!')
 
 santa_info = defaultdict(list)
 
-    
+
 @client.command()
 async def start(ctx):
     santa_embed = discord.Embed(
@@ -19,7 +19,7 @@ async def start(ctx):
     santa_embed.set_footer(text='Made by Boxy')
     santa_embed.set_image(url='https://i0.wp.com/www.bestworldevents.com/wp-content/uploads/2017/11/Minions-Christmas-Gif.gif?fit=500%2C250')
     
-    if ctx.channel.name != 'main':
+    if ctx.channel.name != 'main': # CHANGE THE NAME "main" TO THE NAME OF THE CHANNEL THE BOT WILL BE CALLED FROM
         return
     msg = await ctx.send(embed=santa_embed)
     await msg.add_reaction('👍')
@@ -66,12 +66,11 @@ async def readmessage(message):
         return 
     if len(santa_info[message.author]) == 1:
         santa_info[message.author].append(message.content)
-        print(santa_info)
         await message.channel.send('Received your message 👍')
 
 @client.event
 async def on_reaction_add(reaction, user):
-    if user == client.user or reaction.emoji != '👍' or reaction.message.channel.name != 'main':
+    if user == client.user or reaction.emoji != '👍' or reaction.message.channel.name != 'main': # CHANGE THE NAME "main" TO THE NAME OF THE CHANNEL THE BOT WILL BE CALLED FROM
         return 
     if user not in santa_info:
         santa_info[user].append(await user.avatar_url_as(size=32).read())

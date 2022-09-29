@@ -29,8 +29,6 @@ class Generate():
             
             
     def generateGifs(self, url, name):
-        if path.exists('Gifs\\%s.gif'%(str(name).strip('#0123456789'))):
-            return 'Gifs\\%s.gif'%(str(name).strip('#0123456789'))
                                    
         im = Image.open('Gifs\\original.gif')
         
@@ -41,8 +39,8 @@ class Generate():
         for i, frame in enumerate(frames):
             frame = frame.convert("RGBA")
             d = ImageDraw.Draw(frame)
-            d.text((120,190), "You received:", font=ImageFont.truetype('ENTER LOCATION OF FONT YOU WANT TO USE', 40), fill='black')
-            d.text((120,230), "%s"%(str(name).strip('#0123456789')), font=ImageFont.truetype('ENTER LOCATION OF FONT YOU WANT TO USE', 40), fill='gray')
+            d.text((120,190), "You received:", font=ImageFont.truetype('font\\MinecraftTen-VGORe.ttf', 40), fill='black')
+            d.text((120,230), "%s"%(str(name).strip('#0123456789')), font=ImageFont.truetype('font\\MinecraftTen-VGORe.ttf', 40), fill='gray')
             del d
             frame.paste(pfp, (220, 275))
             frames[i] = frame

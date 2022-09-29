@@ -5,7 +5,7 @@ Uses Discord.py and Pillow libraries.
 
 **Important Information**\
 ADD YOUR TOKEN TO THE TOP OF THE main.py\
-IF CHANNEL MESSAGE WHERE BOT IS STARTED IS NOT NAMED "main", CHANGE LINES #21 AND #74\
+IF CHANNEL MESSAGE WHERE BOT IS STARTED IS NOT NAMED "main", CHANGE LINES #22 AND #73\
 ***SideNote:
 Gifs created are stored locally. You may want to delete them after the bot has finished. 
 
